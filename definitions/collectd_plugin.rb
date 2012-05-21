@@ -22,7 +22,7 @@ define :collectd_plugin, :options => {}, :template => nil, :cookbook => nil do
     owner "root"
     group "root"
     mode "644"
-    if params[:template].blank?
+    if params[:template].nil?
       source "plugin.conf.erb"
       cookbook params[:cookbook] || "collectd"
     else
@@ -45,7 +45,7 @@ define :collectd_python_plugin, :options => {}, :module => nil, :path => nil do
     end
     retry
   end
-  if not params[:path].blank?
+  if not params[:path].nil?
     t.variables[:options][:paths] << params[:path]
   end
   t.variables[:options][:modules][params[:module] || params[:name]] = params[:options]
