@@ -37,7 +37,7 @@ end
 define :collectd_python_plugin, :options => {}, :module => nil, :path => nil do
   begin
     t = resources(:template => "/etc/collectd/plugins/python.conf")
-  rescue ArgumentError
+  rescue ArgumentError,Chef::Exceptions::ResourceNotFound
     collectd_plugin "python" do
       options :paths=>[node[:collectd][:plugin_dir]], :modules=>{}
       template "python_plugin.conf.erb"
