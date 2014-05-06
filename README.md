@@ -8,7 +8,7 @@ This cookbook has only been tested on Ubuntu 10.04.
 
 To use the `collectd::collectd_web` recipe you need the [apache2](https://github.com/opscode/cookbooks/tree/master/apache2) cookbook.
 
-The [collectd_plugins](#) cookbook is not required, but provides many common plugin definitions for easy reuse.
+The [collectd_plugins](https://github.com/coderanger/chef-collectd_plugins) cookbook is not required, but provides many common plugin definitions for easy reuse.
 
 # ATTRIBUTES #
 
